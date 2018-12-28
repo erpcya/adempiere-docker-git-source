@@ -1,0 +1,25 @@
+#  Copyright (C) 2003-2018, E.R.P. Consultores y Asociados, C.A. , http://www.erpya.com
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#  Email: ysenih@erpya.com, http://www.erpya.com , http://github.com/YamelSenih
+ADEMPIERE_WEB_PORT=55537
+ADEMPIERE_SSL_PORT=4448
+ADEMPIERE_VERSION=3.9.0
+ADEMPIERE_BRANCH_NAME=hotfix/Retail
+# ATENTION If is "Y" it will be replace de actual defined database with a empty ADempiere seed
+ADEMPIERE_DB_INIT=Y
+#DB Values
+ADEMPIERE_DB_HOST=Test
+ADEMPIERE_DB_PORT=5432
+ADEMPIERE_DB_USER=adempiere
+ADEMPIERE_DB_PASSWORD=adempiere
+ADEMPIERE_DB_NAME=adempiere
+ADEMPIERE_DB_ADMIN_PASSWORD=postgres
