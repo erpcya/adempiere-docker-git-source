@@ -234,7 +234,7 @@ to do this in terminal we will run the next line:
 This command will build the images defined in the /tenant/properties, create the containers and start them. The "-d" parameter will launch the process in background.
 To stop the containers you will run the next command.
 ```
-./application.sh eevolution stop
+./application.sh tenant stop
 ```
 Note that in the above command we use the instruction ```stop``` insted of ```down```, this is because the ```down``` instruction delete the containers to, ```stop``` only shutdown them.
 
