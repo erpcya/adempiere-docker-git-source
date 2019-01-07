@@ -12,6 +12,9 @@ than or equal to 3.0.
 To check the version of your Docker installation, a terminal window and type the
 following command:
 
+## Contributor
+This project was originally get from [https://github.com/adempiere/adempiere-docker](https://github.com/adempiere/adempiere-docker)
+
 ```
 docker info
 ```
@@ -105,7 +108,7 @@ ADEMPIERE_DB_PORT=55432
 ADEMPIERE_DB_PASSWORD=adempiere
 ADEMPIERE_DB_ADMIN_PASSWORD=postgres
 ```
-tenant/.env
+tenant/properties
 ```
 ADEMPIERE_WEB_PORT=8277
 ADEMPIERE_SSL_PORT=4444
@@ -217,20 +220,18 @@ If you don't have an external database server, You can use the postgres server c
 Edit and define the parameters for new instance
 
 ```
-nano .env 
-nano ./eevolution/.env
+nano properties 
+nano /tenant/properties
 ```
 
 to do this in terminal we will run the next line:
 
-note : eevolution is the name for new tenant
-
 ```
-./application.sh eevolution up -d 
+./create_tenant.sh docker_test up -d 
 ```
 
 
-This command will build the images defined in the .env, create the containers and start them. The "-d" parameter will launch the process in background.
+This command will build the images defined in the /tenant/properties, create the containers and start them. The "-d" parameter will launch the process in background.
 To stop the containers you will run the next command.
 ```
 ./application.sh eevolution stop
@@ -240,23 +241,8 @@ Note that in the above command we use the instruction ```stop``` insted of ```do
 If you have a new tenant, you only need to edit and setting the tenant definition to tenant/.env file and start up only this image and container.
 
 ```
-./application.sh eevolution up -d 
+./create_tenant.sh docker_test up -d 
 ```
-
-If you need a backup from Database using 
-
-Generate backup : 
-
-```
-./application.sh eevolution exec adempiere-tenant /opt/Adempiere/utils/RUN_DBExport.sh
-```
-Ge backup zip :
-
-```
-./application.sh eevolution exec adempiere-tenant "cat /opt/Adempiere/data/ExpDat.dmp" \ 
-| gzip >  "backup.$(date +%F_%R).gz"
-```
-
 
 If you're not familiar with docker-compose and how to manage Docker services through docker-compose have a
 look at the [docker compose documentation](https://docs.docker.com/compose)
